@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // set tanggal otomatis
+  // === Set tanggal otomatis ===
   const today = new Date().toISOString().split("T")[0];
   document.getElementById("tanggal").value = today;
 
-  // update waktu tiap detik
+  // === Update waktu tiap detik ===
   function updateTime() {
     const now = new Date();
     const h = String(now.getHours()).padStart(2, "0");
@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(updateTime, 1000);
   updateTime();
 
-  // handle form submit via AJAX
+  // === Handle form submit via AJAX ===
   const form = document.getElementById("orderForm");
   form.addEventListener("submit", (e) => {
-    e.preventDefault(); // biar gak reload
+    e.preventDefault(); // cegah reload
 
     const formData = new FormData(form);
 
@@ -27,11 +27,33 @@ document.addEventListener("DOMContentLoaded", () => {
     })
       .then(res => res.text())
       .then(data => {
-        alert("✅ Pesanan berhasil disimpan!");
-        form.reset(); // kosongkan input
-        document.getElementById("tanggal").value = today; // isi ulang tanggal
-        updateTime(); // isi ulang waktu
+        if (data.trim() === "OK") {
+          alert("✅ Pesanan berhasil disimpan!");
+
+          // reset form
+          form.reset();
+          document.getElementById("tanggal").value = today;
+          updateTime();
+
+          // Buat QR di dalam modal
+          const qrcodeModal = document.getElementById("qrcode-modal");
+          qrcodeModal.innerHTML = ""; // clear biar nggak double
+          new QRCode(qrcodeModal, {
+            text: "https://link-pembayaran.com/checkout?id=12345", // ganti dengan ID unik dari backend
+            width: 200,
+            height: 200
+          });
+
+          // Tampilkan modal
+          const modal = new bootstrap.Modal(document.getElementById("qrisModal"));
+          modal.show();
+        } else {
+          alert("❌ Terjadi kesalahan: " + data);
+        }
       })
-      .catch(err => console.error("Error:", err));
+      .catch(err => {
+        console.error("Error:", err);
+        alert("⚠️ Gagal mengirim data. Silakan coba lagi.");
+      });
   });
 });
