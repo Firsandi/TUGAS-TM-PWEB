@@ -81,3 +81,8 @@ background-color: #5a3821;
 color: #fff;
 text-align: center;
 }
+
+#qrcode-modal {
+  display: flex;
+  justify-content: center;
+}
