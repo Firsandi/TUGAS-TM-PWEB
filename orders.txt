@@ -1,16 +1,17 @@
 Nama: Firsandi
 No HP: 0878880123123
 Menu: Espresso
-Tanggal: 2025-09-20
-Waktu: 23:31:50
-Nama: Dina
-No HP: 1234443455
+Tanggal: 2025-09-21
+Waktu: 21:48:01
+Nama: Firsandi
+No HP: 0878880123123
 Menu: Espresso
-Tanggal: 2025-09-20
-Waktu: 23:32:16
-Nama:  Linux mendo
-No HP: 2323142343434
+Tanggal: 2025-09-21
+Waktu: 21:51:00
+Nama: Firsandi
+No HP: 0878880123123
 Menu: Espresso
+<<<<<<< HEAD
 Tanggal: 2025-09-20
 Waktu: 23:32:50
 Nama: raja setan
@@ -18,3 +19,27 @@ No HP: tes
 Menu: Espresso
 Tanggal: 2025-09-21
 Waktu: 20:03:10
+=======
+Tanggal: 2025-09-21
+Waktu: 21:52:34
+Nama: Firsandi
+No HP: 0878880123123
+Menu: Espresso
+Tanggal: 2025-09-21
+Waktu: 21:53:11
+Nama: Firsandi
+No HP: 0878880123123
+Menu: Espresso
+Tanggal: 2025-09-21
+Waktu: 21:53:53
+>>>>>>> fc64eb4fdacf65ff0012edc6d829bd83b8d0007d
+Nama: Din
+No HP: tes
+Menu: Espresso
+Tanggal: 2025-09-22
+Waktu: 15:03:44
+Nama: raja setan
+No HP: tes
+Menu: Espresso
+Tanggal: 2025-09-22
+Waktu: 16:13:16
