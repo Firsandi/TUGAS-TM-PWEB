@@ -42,6 +42,7 @@ if (!isset($_SESSION['login'])) {
         <li class="nav-item"><a class="nav-link" href="#proses">Proses</a></li>
         <li class="nav-item"><a class="nav-link" href="#pemesanan">Pemesanan</a></li>
         <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+        <li class="nav-item"><a href="logout.php" class="btn btn-danger">Logout</a></li> 
       </ul>
     </div>
   </div>
@@ -88,13 +89,16 @@ if (!isset($_SESSION['login'])) {
   <section id="pemesanan">
     <h2>Form Pemesanan</h2>
     <form id= orderForm method="POST" action="process_order.php">
-      <label for="nama">Nama:</label><br>
-      <input type="text" name="nama" id="nama" required><br>
-      <label for="nohp">No Hp:</label><br>
-      <input type="text" id="nohp" name="nohp" required><br>
+      <label for="nama_pemesan">Nama Pemesan:</label><br>
+      <input type="text" name="nama_pemesan" id="nama_pemesan" required><br>
+
+      <label for="nohp_pemesan">No HP Pemesan:</label><br>
+      <input type="text" name="nohp_pemesan" id="nohp_pemesan" required><br>
 
       <div id="react-root"></div>
 
+      <label for="harga">Harga:</label><br>
+      <input type="text" id="harga" name="harga" readonly><br>
       <label for="tanggal">Tanggal Pemesanan:</label><br>
       <input type="date" id="tanggal" name="tanggal" required><br>
       <label for="waktu">Waktu Pemesanan:</label><br>
@@ -129,8 +133,9 @@ if (!isset($_SESSION['login'])) {
     </div>
   </div>
 
+
   <footer>
-    <a href="logout.php" class="btn btn-danger">Logout</a>
+    <!-- <a href="logout.php" class="btn btn-danger">Logout</a> -->
     <p>&copy; 2025 Kopi Kenongo</p>
   </footer>
   
@@ -144,27 +149,33 @@ if (!isset($_SESSION['login'])) {
   };
 
   function MenuHarga() {
-    const [menu, setMenu] = React.useState("Espresso");
-    const [harga, setHarga] = React.useState(hargaMenu["Espresso"]);
+  const [menu, setMenu] = React.useState("Espresso");
+  const [harga, setHarga] = React.useState(hargaMenu["Espresso"]);
 
-    const handleChange = (e) => {
-      const selected = e.target.value;
-      setMenu(selected);
-      setHarga(hargaMenu[selected]);
-    };
+  const handleChange = (e) => {
+    const selected = e.target.value;
+    setMenu(selected);
+    setHarga(hargaMenu[selected]);
+    // update kolom harga di form
+    document.getElementById("harga").value = hargaMenu[selected];
+  };
 
-    return (
-      <div>
-        <label htmlFor="menu">Pilih Menu Kopi:</label><br />
-        <select id="menu" name="menu" value={menu} onChange={handleChange}>
-          {Object.keys(hargaMenu).map((item) => (
-            <option key={item} value={item}>{item}</option>
-          ))}
-        </select><br />
-        <p>Harga: Rp {harga}</p>
-      </div>
-    );
-  }
+  // set harga default ke kolom harga saat pertama kali render
+  React.useEffect(() => {
+    document.getElementById("harga").value = harga;
+  }, []);
+
+  return (
+    <div>
+      <label htmlFor="menu">Pilih Menu Kopi:</label><br />
+      <select id="menu" name="menu" value={menu} onChange={handleChange}>
+        {Object.keys(hargaMenu).map((item) => (
+          <option key={item} value={item}>{item}</option>
+        ))}
+      </select><br />
+    </div>
+  );
+}
 
   ReactDOM.createRoot(document.getElementById("react-root")).render(<MenuHarga />);
 </script>

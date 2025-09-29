@@ -3,7 +3,7 @@ session_start();
 
 $host = "127.0.0.1";
 $username = "postgres";
-$password = "dinadin";
+$password = "jungkook";
 $dbname = "pweb";
 $port = "5432";
 
@@ -21,7 +21,11 @@ $query = "SELECT * FROM users WHERE nama=$1 AND password=$2 AND nohp=$3";
 $result = pg_query_params($conn, $query, array($nama, $pass, $nohp));
 
 if (pg_num_rows($result) > 0) {
-    $_SESSION['login'] = $nama;
+    $row = pg_fetch_assoc($result);
+    $_SESSION['login'] = true;
+    $_SESSION['users_id'] = $row['users_id'];
+    $_SESSION['nama'] = $row['nama'];
+    $_SESSION['nohp'] = $row['nohp'];
     header("Location: index.php");
     exit;
 } else {
