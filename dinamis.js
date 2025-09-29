@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // === Set tanggal otomatis ===
   const today = new Date().toISOString().split("T")[0];
   document.getElementById("tanggal").value = today;
 
-  // === Update waktu tiap detik ===
   function updateTime() {
     const now = new Date();
     const h = String(now.getHours()).padStart(2, "0");
@@ -14,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(updateTime, 1000);
   updateTime();
 
-  // === Handle form submit via AJAX ===
   const form = document.getElementById("orderForm");
   form.addEventListener("submit", (e) => {
     e.preventDefault(); // cegah reload
@@ -30,12 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (data.trim() === "OK") {
           alert("✅ Pesanan berhasil disimpan!");
 
-          // reset form
           form.reset();
           document.getElementById("tanggal").value = today;
           updateTime();
 
-          // Buat QR di dalam modal
           const qrcodeModal = document.getElementById("qrcode-modal");
           qrcodeModal.innerHTML = ""; // clear biar nggak double
           new QRCode(qrcodeModal, {
@@ -44,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
             height: 200
           });
 
-          // Tampilkan modal
           const modal = new bootstrap.Modal(document.getElementById("qrisModal"));
           modal.show();
         } else {

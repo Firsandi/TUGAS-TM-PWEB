@@ -23,3 +23,78 @@ No HP: 0878880123123
 Menu: Espresso
 Tanggal: 2025-09-21
 Waktu: 21:53:53
+Nama: Firsnadi
+No HP: 08765455888
+Menu: Kopi Tubruk
+Tanggal: 2025-09-11
+Waktu: 15:29:37
+Nama: Firzandi
+No HP: 1234234234234
+Menu: Latte
+Tanggal: 2025-09-22
+Waktu: 15:45:48
+Nama: Firsnadi
+No HP: 08765455888
+Menu: Espresso
+Tanggal: 2025-09-22
+Waktu: 15:48:09
+Nama: Firsnadi
+No HP: 08765455888
+Menu: Espresso
+Tanggal: 2025-09-22
+Waktu: 15:50:25
+Nama: Firsandi andraw gantenk
+No HP: 08777887666
+Menu: Cappuccino
+Tanggal: 2025-09-23
+Waktu: 15:51:59
+Nama: Firsnadi
+No HP: 08765455888
+Menu: Espresso
+Tanggal: 2025-09-22
+Waktu: 16:35:23
+Nama: Firsnadi
+No HP: 08765455888
+Menu: Espresso
+Tanggal: 2025-09-22
+Waktu: 16:36:20
+Nama: Firsnadi
+No HP: 08765455888
+Menu: Espresso
+Tanggal: 2025-09-22
+Waktu: 16:39:12
+Nama: Firsnadi
+No HP: 08765455888
+Menu: Espresso
+Tanggal: 2025-09-22
+Waktu: 16:39:45
+Nama: Firsnadi
+No HP: 08765455888
+Menu: Espresso
+Tanggal: 2025-09-22
+Waktu: 16:40:08
+Nama: Firsnadi
+No HP: 08765455888
+Menu: Espresso
+Tanggal: 2025-09-22
+Waktu: 16:58:36
+Nama: Firsandi
+No HP: 0878880123123
+Menu: Espresso
+Tanggal: 2025-09-22
+Waktu: 16:59:29
+Nama: Firsandi
+No HP: 0878880123123
+Menu: Espresso
+Tanggal: 2025-09-29
+Waktu: 14:25:46
+Nama: Firsandi
+No HP: 0878880123123
+Menu: Espresso
+Tanggal: 2025-09-29
+Waktu: 14:35:40
+Nama: Firsandi
+No HP: 0878880123123
+Menu: Espresso
+Tanggal: 2025-09-29
+Waktu: 14:36:10
