@@ -1,17 +1,30 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nama = htmlspecialchars($_POST['nama']);
-    $nohp = htmlspecialchars($_POST['nohp']);
-    $menu = htmlspecialchars($_POST['menu']);
-    $tanggal = htmlspecialchars($_POST['tanggal']);
-    $waktu = htmlspecialchars($_POST['waktu']);
-    $line = "Nama: $nama\n".
-            "No HP: $nohp\n".
-            "Menu: $menu\n".
-            "Tanggal: $tanggal\n".
-            "Waktu: $waktu\n";
-    file_put_contents("orders.txt", $line, FILE_APPEND);
+$host = "127.0.0.1";
+$port = "5432";
+$dbname = "pweb";
+$user = "postgres";
+$password = "dinadin";
 
-     echo "OK";
+$conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
+
+if (!$conn) {
+    echo "❌ Koneksi ke database gagal.";
+    exit;
+}
+
+$nama = $_POST['users'] ?? '';
+$nohp = $_POST['nohp'] ?? '';
+$menu = $_POST['menu'] ?? '';
+$harga = $_POST['harga'] ?? 0;
+$tanggal = $_POST['tanggal'] ?? '';
+$waktu = $_POST['waktu'] ?? '';
+
+$query = "INSERT INTO orders (nama, nohp, menu, harga, tanggal, waktu) VALUES ($1, $2, $3, $4, $5, $6)";
+$result = pg_query_params($conn, $query, array($nama, $nohp, $menu, $harga, $tanggal, $waktu));
+
+if ($result) {
+    echo "OK";
+} else {
+    echo "❌ Gagal menyimpan ke database.";
 }
 ?>

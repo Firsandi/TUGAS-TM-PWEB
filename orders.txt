@@ -43,3 +43,23 @@ No HP: tes
 Menu: Espresso
 Tanggal: 2025-09-22
 Waktu: 16:13:16
+Nama: firsandi
+No HP: 123456789
+Menu: Latte
+Tanggal: 2025-09-22
+Waktu: 16:55:07
+Nama: firsandi
+No HP: 123456789
+Menu: Latte
+Tanggal: 2025-09-22
+Waktu: 16:55:36
+Nama: Dina Trisnawati
+No HP: tes
+Menu: Kopi Tubruk
+Tanggal: 2025-09-22
+Waktu: 17:01:06
+Nama: firsandi
+No HP: 123456789
+Menu: Cappuccino
+Tanggal: 2025-09-22
+Waktu: 17:03:25
