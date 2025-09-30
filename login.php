@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['login'])) {
-    header("Location: logiin.php");
+    header("Location: login.php");
     exit;
 }
 ?>
@@ -21,12 +21,12 @@ if (isset($_SESSION['login'])) {
 
   <section>
     <?php if (isset($_GET['error'])): ?>
-      <p style="color:black; text-align:center; text-bold">
+      <p style="color:black; text-align:center; font-weight:bold">
         Login gagal! Periksa kembali nama, password, dan nomor HP.
       </p>
     <?php endif; ?>
 
-    <form method="POST" action="checklogin.php">
+    <form method="POST" action="checklogin_refactor.php">
       <label for="nama">Nama:</label><br>
       <input type="text" name="nama" id="nama" required><br><br>
 
